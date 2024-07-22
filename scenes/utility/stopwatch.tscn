@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqc36bj8cv421"]
+
+[ext_resource type="Script" path="res://scenes/utility/Stopwatch.gd" id="1_pfila"]
+
+[node name="Stopwatch" type="Label"]
+modulate = Color(1, 0.996078, 0.623529, 1)
+texture_filter = 1
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 41.0
+offset_bottom = 34.0
+text = "0:00"
+script = ExtResource("1_pfila")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crfm8a3tbnw6i"]
+
+[ext_resource type="AudioStream" uid="uid://lskw3nj3b0u6" path="res://assets/music/shady dealings.ogg" id="1_23vuq"]
+
+[node name="LevelBackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_23vuq")
+autoplay = true

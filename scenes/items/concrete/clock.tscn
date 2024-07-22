@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc1jif6ibmcyj"]
+
+[ext_resource type="PackedScene" uid="uid://evumvd8ne4tr" path="res://scenes/items/item.tscn" id="1_fby06"]
+[ext_resource type="Script" path="res://scenes/items/concrete/clock.gd" id="1_wqktl"]
+[ext_resource type="Texture2D" uid="uid://bt8q243mwrh3m" path="res://assets/items/pixelClock.png" id="3_uaiyn"]
+
+[node name="Clock" instance=ExtResource("1_fby06")]
+script = ExtResource("1_wqktl")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(10.5, 10.5)
+scale = Vector2(0.21875, 0.21875)
+texture = ExtResource("3_uaiyn")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(11, 11)

@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://buc27vbf2em3s"]
+
+[ext_resource type="Script" path="res://scenes/menus/levelendmenu.gd" id="1_iabgj"]
+[ext_resource type="Texture2D" uid="uid://goebx2rkcbt8" path="res://assets/images/pixelFriedChicken.png" id="2_k1pn6"]
+[ext_resource type="FontFile" uid="uid://bs7vi50djyq3o" path="res://assets/Minecraft.ttf" id="3_cb2r2"]
+[ext_resource type="AudioStream" uid="uid://bwxf3h7k8csej" path="res://assets/music/the_burger_pope_-_round_clear.mp3" id="4_mjn5m"]
+[ext_resource type="Script" path="res://scenes/menus/TimerLbl.gd" id="5_074k4"]
+
+[sub_resource type="Theme" id="Theme_qnyw1"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_phihf"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_yvt5x"]
+events = [SubResource("InputEventKey_phihf")]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 636.0
+offset_bottom = 363.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = SubResource("Theme_qnyw1")
+script = ExtResource("1_iabgj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 657.0
+offset_bottom = 362.0
+texture = ExtResource("2_k1pn6")
+expand_mode = 1
+
+[node name="NextLevelMenu" type="Button" parent="."]
+self_modulate = Color(0, 0.239216, 0.0156863, 0.901961)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 153.0
+offset_right = 632.0
+offset_bottom = 213.0
+shortcut = SubResource("Shortcut_yvt5x")
+
+[node name="Label" type="Label" parent="NextLevelMenu"]
+modulate = Color(0.929412, 0.662745, 0.811765, 1)
+layout_mode = 0
+offset_left = -2.0
+offset_right = 240.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_cb2r2")
+theme_override_font_sizes/font_size = 27
+text = "NEXT LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuBtn" type="Button" parent="."]
+self_modulate = Color(0, 0.239216, 0.0156863, 0.901961)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 225.0
+offset_right = 632.0
+offset_bottom = 285.0
+
+[node name="Label2" type="Label" parent="MainMenuBtn"]
+modulate = Color(0.929412, 0.662745, 0.811765, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_right = 240.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_cb2r2")
+theme_override_font_sizes/font_size = 27
+text = "MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CongratsLbl" type="Label" parent="."]
+modulate = Color(0.0980392, 0, 0.858824, 1)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 80.0
+offset_right = 635.0
+offset_bottom = 123.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_cb2r2")
+theme_override_font_sizes/font_size = 40
+text = "CONGRATULATIONS"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mjn5m")
+autoplay = true
+
+[node name="TimerLbl" type="Label" parent="."]
+modulate = Color(0.0980392, 0, 0.858824, 1)
+layout_mode = 0
+offset_top = 298.0
+offset_right = 637.0
+offset_bottom = 341.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_cb2r2")
+theme_override_font_sizes/font_size = 40
+text = "HH:MM:SS:mm"
+horizontal_alignment = 1
+script = ExtResource("5_074k4")
+
+[connection signal="pressed" from="NextLevelMenu" to="." method="_on_next_level_menu_pressed"]
+[connection signal="pressed" from="MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]

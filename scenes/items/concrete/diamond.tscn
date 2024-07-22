@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cktfgmjciebbn"]
+
+[ext_resource type="PackedScene" uid="uid://evumvd8ne4tr" path="res://scenes/items/item.tscn" id="1_3w8x0"]
+[ext_resource type="Script" path="res://scenes/items/concrete/diamond.gd" id="2_dtf7o"]
+[ext_resource type="Texture2D" uid="uid://bitmxilg88l5e" path="res://assets/items/Gem_Sprite.png" id="3_d3yd0"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_mj4km"]
+points = PackedVector2Array(1.7, 0, 11.5, 0, 13, 2.8, 6.8, 13, 0, 2.8)
+
+[node name="Diamond" instance=ExtResource("1_3w8x0")]
+scale = Vector2(1.38501, 1.38501)
+script = ExtResource("2_dtf7o")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(6.5, 6.5)
+scale = Vector2(0.135417, 0.135417)
+texture = ExtResource("3_d3yd0")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
+scale = Vector2(1.00193, 1.00193)
+shape = SubResource("ConvexPolygonShape2D_mj4km")

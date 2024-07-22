@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://4eg8tlomey5l"]
+
+[ext_resource type="PackedScene" uid="uid://evumvd8ne4tr" path="res://scenes/items/item.tscn" id="1_bvjib"]
+[ext_resource type="Texture2D" uid="uid://crt0gmc8gcqbs" path="res://assets/items/Greenpotion_Sprite.png" id="2_8ue02"]
+[ext_resource type="Script" path="res://scenes/items/concrete/frog_juice.gd" id="2_qy3ki"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m158s"]
+radius = 8.0
+height = 22.0
+
+[node name="FrogJuice" instance=ExtResource("1_bvjib")]
+script = ExtResource("2_qy3ki")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(8, 11)
+scale = Vector2(0.161458, 0.161458)
+texture = ExtResource("2_8ue02")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(8, 12)
+shape = SubResource("CapsuleShape2D_m158s")

@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4pp1cfh570as"]
+
+[ext_resource type="Script" path="res://scenes/menus/mainmenu.gd" id="1_4xh6r"]
+[ext_resource type="Texture2D" uid="uid://douk7nu0pgds3" path="res://assets/images/pixelChickens.png" id="2_r4hha"]
+[ext_resource type="FontFile" uid="uid://bs7vi50djyq3o" path="res://assets/Minecraft.ttf" id="3_2j6jd"]
+[ext_resource type="AudioStream" uid="uid://dkwafumaftqkt" path="res://assets/music/They Called Us Chickenmen For A Reason.mp3" id="4_vd2a4"]
+
+[sub_resource type="Theme" id="Theme_qnyw1"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 636.0
+offset_bottom = 363.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = SubResource("Theme_qnyw1")
+script = ExtResource("1_4xh6r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 657.0
+offset_bottom = 362.0
+texture = ExtResource("2_r4hha")
+expand_mode = 1
+
+[node name="NewGameBtn" type="Button" parent="."]
+self_modulate = Color(0, 0.239216, 0.0156863, 0.901961)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 153.0
+offset_right = 632.0
+offset_bottom = 213.0
+
+[node name="Label" type="Label" parent="NewGameBtn"]
+modulate = Color(0.929412, 0.662745, 0.811765, 1)
+layout_mode = 0
+offset_left = -2.0
+offset_right = 240.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_2j6jd")
+theme_override_font_sizes/font_size = 27
+text = "NEW GAME
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="."]
+self_modulate = Color(0, 0.239216, 0.0156863, 0.901961)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 225.0
+offset_right = 632.0
+offset_bottom = 285.0
+
+[node name="Label2" type="Label" parent="ContinueBtn"]
+modulate = Color(0.929412, 0.662745, 0.811765, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_right = 240.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_2j6jd")
+theme_override_font_sizes/font_size = 27
+text = "CONTINUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitBtn" type="Button" parent="."]
+self_modulate = Color(0, 0.239216, 0.0156863, 0.901961)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 285.0
+offset_right = 254.0
+offset_bottom = 345.0
+
+[node name="Label2" type="Label" parent="ExitBtn"]
+modulate = Color(0.929412, 0.662745, 0.811765, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_right = 239.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_2j6jd")
+theme_override_font_sizes/font_size = 27
+text = "EXIT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vd2a4")
+autoplay = true
+
+[connection signal="pressed" from="NewGameBtn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="ExitBtn" to="." method="_on_exit_btn_pressed"]

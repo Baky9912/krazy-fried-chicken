@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://evumvd8ne4tr"]
+
+[ext_resource type="Script" path="res://scenes/items/item.gd" id="1_y3juv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gn4py"]
+radius = 9.0
+
+[node name="Item" type="Area2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_y3juv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 16
+visibility_layer = 16
+position = Vector2(10, 10)
+shape = SubResource("CircleShape2D_gn4py")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="item_used" from="." to="." method="effect"]

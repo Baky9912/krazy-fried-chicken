@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciseo0aqgtn5c"]
+
+[ext_resource type="Script" path="res://scenes/menus/levellosemenu.gd" id="1_thwmj"]
+[ext_resource type="Texture2D" uid="uid://lrs8cw26jwxb" path="res://assets/images/pixelJail.png" id="2_sbux4"]
+[ext_resource type="FontFile" uid="uid://bs7vi50djyq3o" path="res://assets/Minecraft.ttf" id="3_vjcmw"]
+[ext_resource type="AudioStream" uid="uid://bvg5nj6yviqhx" path="res://assets/music/backup_plan.mp3" id="4_rxjhp"]
+
+[sub_resource type="Theme" id="Theme_qnyw1"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_h8lui"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_mimrl"]
+events = [SubResource("InputEventKey_h8lui")]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 636.0
+offset_bottom = 363.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = SubResource("Theme_qnyw1")
+script = ExtResource("1_thwmj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 657.0
+offset_bottom = 362.0
+texture = ExtResource("2_sbux4")
+expand_mode = 1
+
+[node name="TryAgainBtn" type="Button" parent="."]
+self_modulate = Color(0, 0.239216, 0.0156863, 0.901961)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 153.0
+offset_right = 632.0
+offset_bottom = 213.0
+shortcut = SubResource("Shortcut_mimrl")
+
+[node name="Label" type="Label" parent="TryAgainBtn"]
+modulate = Color(0.929412, 0.662745, 0.811765, 1)
+layout_mode = 0
+offset_left = -2.0
+offset_right = 240.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_vjcmw")
+theme_override_font_sizes/font_size = 27
+text = "TRY AGAIN
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuBtn" type="Button" parent="."]
+self_modulate = Color(0, 0.239216, 0.0156863, 0.901961)
+layout_mode = 0
+offset_left = 392.0
+offset_top = 225.0
+offset_right = 632.0
+offset_bottom = 285.0
+
+[node name="Label2" type="Label" parent="MainMenuBtn"]
+modulate = Color(0.929412, 0.662745, 0.811765, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_right = 240.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_vjcmw")
+theme_override_font_sizes/font_size = 27
+text = "MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rxjhp")
+autoplay = true
+
+[connection signal="pressed" from="TryAgainBtn" to="." method="_on_try_again_btn_pressed"]
+[connection signal="pressed" from="MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]

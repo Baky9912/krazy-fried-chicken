@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://q3wi1xa1u0xn"]
+
+[ext_resource type="PackedScene" uid="uid://evumvd8ne4tr" path="res://scenes/items/item.tscn" id="1_d2sns"]
+[ext_resource type="Script" path="res://scenes/items/concrete/teleport.gd" id="2_eh7xx"]
+[ext_resource type="Texture2D" uid="uid://cqjoie6thre8d" path="res://assets/items/Galaxy2_Background.png" id="3_gk688"]
+
+[node name="Teleport" instance=ExtResource("1_d2sns")]
+script = ExtResource("2_eh7xx")
+landing = Vector2(0, 0)
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(11.1709, 8.93675)
+scale = Vector2(0.0148946, 0.0148946)
+texture = ExtResource("3_gk688")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(11.1709, 8.93675)
