@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://lskw3nj3b0u6"
+path="res://.godot/imported/shady dealings.ogg-a41a7852bbc6a13d52b70d7850e651c2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/shady dealings.ogg"
+dest_files=["res://.godot/imported/shady dealings.ogg-a41a7852bbc6a13d52b70d7850e651c2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
