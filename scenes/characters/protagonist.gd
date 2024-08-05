@@ -16,15 +16,17 @@ var item : Item = null # Clock.new()
 var outside_control: MovementController = MovementController.new(0, 0, 0, Vector2(0,0))
 var inside_control: Vector2 = Vector2.ZERO
 @onready var old_pos: Vector2 = self.position
-
+var in_fastfall = false
 
 func _unhandled_input(_event):
 	dir_x = (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
 	buffered_jump = Input.is_action_just_pressed("ui_up")
-	if Input.is_action_just_pressed("ui_down"):
-		gravity_pull *= 2.5
-	if Input.is_action_just_released("ui_down"):
-		gravity_pull /= 2.5
+	if Input.is_action_just_pressed("ui_down") and not in_fastfall:
+		gravity_pull += 30
+		in_fastfall = true
+	if Input.is_action_just_released("ui_down") and in_fastfall:
+		gravity_pull -= 30
+		in_fastfall = false
 	if Input.is_action_just_pressed("use_item"):
 		use_item()
 	if Input.is_action_just_pressed("restart_level"):

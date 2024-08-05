@@ -18,7 +18,5 @@ func lose_speed(delta: float) -> Vector2:
 		return Vector2.ZERO
 	var old_vel = velocity
 	velocity = velocity.normalized() * max(0, (velocity.length() - linear_loss * delta))
-	var loss_vel = old_vel - velocity
-	loss_vel += mult_loss*velocity*delta
-	velocity *= 1-mult_loss*delta
-	return loss_vel
+	return old_vel - velocity
+	

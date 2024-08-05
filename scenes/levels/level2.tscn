@@ -434,7 +434,7 @@ position = Vector2(2735, 488)
 position = Vector2(2167, 339)
 rotation = -0.00525633
 scale = Vector2(0.698785, 1.69035)
-left_zoom = 1.35
+left_zoom = 1.1
 left_offset = Vector2(0, -50)
 
 [node name="CameraTrigger4" parent="." instance=ExtResource("9_o6o7c")]
